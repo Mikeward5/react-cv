@@ -1,0 +1,179 @@
+/* Main layout */
+.app-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Editor and preview panels */
+.editor,
+.preview {
+  min-width: 0;
+  border-radius: 12px;
+  background-color: white;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  box-shadow: 0 4px 20px rgba(30, 50, 80, 0.06);
+}
+
+/* Editor layout */
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #1e293b;
+}
+
+/* General Info, Education and Work sections */
+.editor > div {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+/* Section headings */
+.editor h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Forms */
+.editor form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 10px;
+  background-color: #f8fafc;
+}
+
+/* Labels */
+.editor label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Inputs and textareas */
+.editor input:not([type="submit"]),
+.editor textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background-color: white;
+  color: #0f172a;
+  font: inherit;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.editor textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.editor input::placeholder,
+.editor textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Input focus */
+.editor input:focus,
+.editor textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* Buttons */
+.editor button,
+.editor input[type="submit"] {
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background-color: #2563eb;
+  color: white;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.editor button:hover,
+.editor input[type="submit"]:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.editor button:active,
+.editor input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.editor button:focus-visible,
+.editor input[type="submit"]:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* Saved information cards */
+.editor .info-box {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.editor .info-box p {
+  margin: 0.4rem 0;
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+.editor .info-box button {
+  margin-top: 0.75rem;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    gap: 1rem;
+  }
+
+  .editor,
+  .preview {
+    padding: 1rem;
+  }
+
+  .editor > div {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editor button,
+  .editor input,
+  .editor textarea {
+    transition: none;
+  }
+}

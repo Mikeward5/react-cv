@@ -1,0 +1,80 @@
+.CVPreview-layout {
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.generalInfo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.generalInfo h1 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.email-phone {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.email-phone p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.CVPreview-layout h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.education,
+.work {
+  margin-top: 2rem;
+}
+
+.education-box,
+.work-box {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.date-box {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.education-details h3,
+.work-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.education-details p,
+.work-details p {
+  margin: 0.3rem 0;
+}
+
+.company {
+  font-weight: 600;
+  color: #475569;
+}
+
+@media (max-width: 600px) {
+  .education-box,
+  .work-box {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
